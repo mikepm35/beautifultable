@@ -92,8 +92,7 @@ class RowData(BaseRow):
 
     def __str__(self):
         """Return a string representation of a row."""
-        row = [convert_to_numeric(item, self._table.numeric_precision)
-               for item in self._row]
+        row = self._row # Does not try to convert to float/int
         table = self._table
         width = table.column_widths
         align = table.column_alignments
